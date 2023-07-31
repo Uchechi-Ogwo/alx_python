@@ -1,13 +1,11 @@
 import random
 
-# Generate a random signed number between -10000 and 10000 (inclusive)
 number = random.randint(-10000, 10000)
 
-# Get the last digit of the number
-last_digit = abs(number) % 10
+# Get the last digit of the number using string slicing
+last_digit = int(str(number)[-1])
 
-# Print the result based on the last digit
-print("The string Last digit of, {}, is {}, ".format(number, last_digit), end="")
+print("The string Last digit of", number, "is", last_digit, end=" ")
 
 if last_digit > 5:
     print("and is greater than 5")

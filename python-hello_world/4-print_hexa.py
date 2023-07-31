@@ -1,2 +1,2 @@
-for i in range(99):
-    print("Decimal: {}, Hexadecimal: {:X}".format(i, i))
+for i in range(0, 99):
+  print("{} = {}".format(i, hex(i)))
