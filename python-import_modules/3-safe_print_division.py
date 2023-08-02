@@ -10,6 +10,5 @@ def safe_print_division(a, b):
     print("Error:", e)
   finally:
     print("Inside result: {}".format(result))
-      except NameError:
-        print("Inside result: None")
+    
     return result
