@@ -9,8 +9,6 @@ def safe_print_division(a, b):
   except Exception as e:
     print("Error:", e)
   finally:
-    try:
-      print("Inside result: {}".format(result))
-    except NameError:
-      print("Inside result: Division resulted in an error.")
+    print("Inside result: {}".format(result))
+    
     return result
