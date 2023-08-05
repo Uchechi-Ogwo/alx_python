@@ -1,24 +1,13 @@
+# A function that replaces or adds key/value in a dictionary
+
 def update_dictionary(a_dictionary, key, value):
+  if len(a_dictionary) == 0:
     a_dictionary[key] = value
-    return a_dictionary
-
-def print_sorted_dictionary(my_dict):
-    """ Print sorted dictionary """
-    keys = sorted(my_dict.keys())
-    for k in keys:
-        print("{}: {}".format(k, my_dict[k]))
-
-a_dictionary = {'language': "C", 'number': 89, 'track': "Low level"}
-
-new_dict = update_dictionary(a_dictionary, 'language', "Python")
-print_sorted_dictionary(new_dict)
-print("--")
-print_sorted_dictionary(a_dictionary)
-
-print("--")
-print("--")
-
-new_dict = update_dictionary(a_dictionary, 'city', "San Francisco")
-print_sorted_dictionary(new_dict)
-print("--")
-print_sorted_dictionary(a_dictionary)
+  else:
+    for a, b in a_dictionary.items():
+      if key in a == True:
+        a_dictionary[key] = value
+      else:
+        a_dictionary[key] = value
+      return a_dictionary
+  return a_dictionary
