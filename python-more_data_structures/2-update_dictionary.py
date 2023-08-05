@@ -9,6 +9,7 @@ def print_sorted_dictionary(my_dict):
         print("{}: {}".format(k, my_dict[k]))
 
 a_dictionary = {'language': "C", 'number': 89, 'track': "Low level"}
+
 new_dict = update_dictionary(a_dictionary, 'language', "Python")
 print_sorted_dictionary(new_dict)
 print("--")
