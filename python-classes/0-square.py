@@ -1,19 +1,10 @@
-#!/usr/bin/python3
-
+# write a class Square that defines a square
+"""This is a module design to explore the basic of class
+write a class Square that defines a Square by:
+private instance attribute
+"""
 class Square:
-    def __init__(self, size):
-        self.__size = size
-
-my_square = Square(3)
-print(type(my_square))
-print(my_square.__dict__)
-
-try:
-    print(my_square.size)
-except Exception as e:
-    print(e)
-
-try:
-    print(my_square.__size)
-except Exception as e:
-    print(e)
+  """ A class method for Square
+  """
+  def __init__(self, size):
+    self.__size = size
