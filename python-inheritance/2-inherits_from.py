@@ -1,25 +1,9 @@
-""" 
-This Module is issubclass method takes the obj type variable,
-and a_class method
-"""
+#!/usr/bin/python3
+"""Module containing inherits_from method"""
 
 
-def is_kind_class(obj, a_class):
-    """ 
-    Function to check if a data is a subclass of the other
-    This function takes two numbers, 'obj' and 'a_class',
-    and returns a bool if it was inherited from it class.
-
-       Parameters:
-           obj (field): The first number.
-           a_class ( object): The second number.
-
-       Return:
-           bool (True and False): from the comparison of obj and a_class
-
-    """
-    # if isinstance(type(obj), a_class)
-    if isinstance(type(obj), a_class) or issubclass(type(obj), a_class):
-        return True
-    else:
-        return False
+def inherits_from(obj, a_class):
+    """returns True if the object is an instance of a class that
+    inherited (directly or indirectly) from the specified class;
+    otherwise False"""
+    return isinstance(obj, a_class) and type(obj) != a_class
