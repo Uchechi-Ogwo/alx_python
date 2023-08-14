@@ -1,30 +1,28 @@
-""" 
-Write a class Rectangle that inherits from BaseGeometry(5-base_geometry.py)
-"""
-BaseGeometry = __import__('5-base_geometry').BaseGeometry
+class BaseGeometry:
+    def __dir__(cls):
+        attrib = super().__dir__()
+        n_attri = []
+        for attr in attrib:
+            if attr != '__init_subclass__':
+                n_attri.append(attr)
+        return n_attri
+
+    def area(self):
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name: str, value: int):
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        elif value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
 
-class BaseGeometryMetaClass(type):
-    """ 
-    A metaclass for Base Geomerty
-    """
-    def __dir__(cls) -> None:
-        """ 
-        A function define to remove the __init_subclass__ from dir
-        """
-        return [attribute for attribute in super().__dir__ if attribute != '__init_subclass__']
-
-
-class Rectangle(BaseGeometry, metaclass=BaseGeometryMetaClass):
-    """ 
-    Write a class rectangle that inherits from BaseGeometry (5-base_geometry.py).
-    """
-
+class Rectangle(BaseGeometry):
     def __init__(self, width, height):
-        """ 
-        Initialaizotio function for base geometry
-        """
-        width = BaseGeometry.integer_validator(self, "width", width)
-        height = BaseGeometry.integer_validator(self, "height", height)
         self.__width = width
         self.__height = height
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
+
+    def __str__(self):
+        return f"[Rectangle] {self.__width}/{self.__height}"
